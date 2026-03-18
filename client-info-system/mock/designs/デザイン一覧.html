@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>情報一覧 - デザイン比較</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif; margin: 0; padding: 32px 24px; background: #f5f5f5; }
+    h1 { font-size: 1.4rem; margin-bottom: 8px; color: #333; }
+    p.sub { color: #666; font-size: 0.9rem; margin-bottom: 28px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; max-width: 900px; }
+    a.card { display: block; padding: 20px; background: #fff; border-radius: 12px; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,.08); transition: transform .15s, box-shadow .15s; }
+    a.card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+    .card .name { font-weight: 600; font-size: 1rem; margin-bottom: 4px; }
+    .card .desc { font-size: 0.85rem; color: #666; line-height: 1.5; }
+    .card .open { font-size: 0.8rem; color: #2383e2; margin-top: 10px; }
+    a.back { display: inline-block; margin-bottom: 20px; color: #2383e2; text-decoration: none; font-size: 0.9rem; }
+    a.back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <a href="../利用者一覧.html" class="back">← もとの利用者一覧にもどる</a>
+  <h1>情報一覧のデザイン比較</h1>
+  <p class="sub">福祉事業所向け・明るめのデザインを5パターン用意しました。クリックして開き、採用したいものを選んでください。</p>
+
+  <div class="grid">
+    <a href="デザインA_やわらかパステル.html" class="card">
+      <span class="name">A：やわらかパステル</span>
+      <p class="desc">うすいピンク・ブルー・ミントのグラデーション背景。角丸多めでやわらかい印象。落ち着いた明るさ。</p>
+      <span class="open">開く →</span>
+    </a>
+    <a href="デザインB_清潔ライトブルー.html" class="card">
+      <span class="name">B：清潔ライトブルー</span>
+      <p class="desc">水色ベースの清潔感。医療・福祉施設でよく使われるトーン。すっきり読みやすい。</p>
+      <span class="open">開く →</span>
+    </a>
+    <a href="デザインC_自然グリーン.html" class="card">
+      <span class="name">C：自然グリーン</span>
+      <p class="desc">クリーム＋やわらかい緑。自然で安心感のある明るさ。リラックスした雰囲気。</p>
+      <span class="open">開く →</span>
+    </a>
+    <a href="デザインD_あたたかオレンジ.html" class="card">
+      <span class="name">D：あたたかオレンジ</span>
+      <p class="desc">ベージュ＋コーラル・オレンジのアクセント。あたたかく迎え入れるような明るさ。</p>
+      <span class="open">開く →</span>
+    </a>
+    <a href="デザインE_すっきりイエロー.html" class="card">
+      <span class="name">E：すっきりイエロー</span>
+      <p class="desc">うすいイエロー＋ゴールド系。日差しのような明るさでポジティブな印象。</p>
+      <span class="open">開く →</span>
+    </a>
+  </div>
+</body>
+</html>
