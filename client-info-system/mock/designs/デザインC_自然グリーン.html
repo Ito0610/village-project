@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>情報一覧 - デザインC（自然グリーン）</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; margin: 0; padding: 28px 24px 48px; background: #f5f9f2; min-height: 100vh; color: #3d4a36; }
+    .design-badge { display: inline-block; margin-bottom: 16px; padding: 6px 14px; background: #7ba86e; color: #fff; font-size: 0.8rem; border-radius: 8px; font-weight: 500; }
+    h1 { font-size: 1.6rem; margin-bottom: 12px; color: #4a6b3d; font-weight: 700; }
+    .search-wrap { margin-bottom: 24px; }
+    .search-wrap label { display: block; font-size: 0.9rem; color: #4a6b3d; margin-bottom: 6px; font-weight: 500; }
+    .search-wrap input { width: 100%; max-width: 340px; padding: 11px 14px; font-size: 1rem; border: 1px solid #b8d4ac; border-radius: 10px; background: #fff; }
+    .search-wrap input:focus { outline: none; border-color: #7ba86e; box-shadow: 0 0 0 2px rgba(123,168,110,.2); }
+    .section-title { font-size: 1.1rem; font-weight: 600; margin: 28px 0 12px; color: #4a6b3d; padding-bottom: 6px; border-bottom: 2px solid #c5e0b8; }
+    .section-title:first-of-type { margin-top: 0; }
+    .note { font-size: 0.85rem; color: #5a6b52; margin-bottom: 20px; padding: 14px 18px; background: #fff; border-radius: 10px; border: 1px solid #d4e8cc; }
+    .table-wrap { overflow-x: auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 14px rgba(74,107,61,.08); margin-bottom: 12px; border: 1px solid #d4e8cc; }
+    table { width: 100%; border-collapse: collapse; min-width: 640px; }
+    th, td { padding: 13px 16px; text-align: left; border-bottom: 1px solid #e5f0e0; }
+    th { background: #f8fcf6; font-weight: 600; color: #4a6b3d; font-size: 0.85rem; }
+    td { font-size: 0.9rem; color: #3d4a36; }
+    tr:hover { background: #fafdf8; }
+    tr.no-match { display: none; }
+    .link-cell { white-space: nowrap; }
+    a.btn-detail { display: inline-block; padding: 8px 18px; background: #7ba86e; color: #fff; text-decoration: none; border-radius: 10px; font-size: 0.85rem; font-weight: 500; }
+    a.btn-detail:hover { background: #6a9760; }
+    a.addr-link { color: #5a7d4a; text-decoration: none; }
+    a.addr-link:hover { text-decoration: underline; color: #4a6b3d; }
+    .search-hint { font-size: 0.8rem; color: #6a7a62; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <span class="design-badge">デザインC：自然グリーン</span>
+  <h1>情報一覧</h1>
+  <p class="note">【モック】利用者情報と施設情報を一覧で表示します。ひらがなで検索できます。利用者・施設の「詳細を開く」からそれぞれのNotionページなどへ遷移します。</p>
+
+  <div class="search-wrap">
+    <label for="search">検索（ひらがなで利用者・施設を検索）</label>
+    <input type="text" id="search" placeholder="例：やまだ、さとう、〇〇デイ" autocomplete="off">
+    <p class="search-hint">よみがな・読み仮名の一部で絞り込みます</p>
+  </div>
+
+  <h2 class="section-title">利用者情報</h2>
+  <div class="table-wrap">
+    <table id="table-users">
+      <thead>
+        <tr>
+          <th>氏名</th>
+          <th>よみがな</th>
+          <th>性別</th>
+          <th>連絡先（電話番号）</th>
+          <th>住所（自宅）</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-yomigana="やまだ たろう">
+          <td>山田 太郎</td>
+          <td>やまだ たろう</td>
+          <td>男性</td>
+          <td>03-1234-5678</td>
+          <td><a href="https://www.google.com/maps?q=東京都〇〇区〇〇" class="addr-link" target="_blank" rel="noopener">東京都〇〇区〇〇 1-2-3</a></td>
+          <td class="link-cell"><a href="../1利用者1ページ.html" class="btn-detail">詳細を開く</a></td>
+        </tr>
+        <tr data-yomigana="さとう はなこ">
+          <td>佐藤 花子</td>
+          <td>さとう はなこ</td>
+          <td>女性</td>
+          <td>03-2345-6789</td>
+          <td><a href="https://www.google.com/maps?q=東京都〇〇区〇〇" class="addr-link" target="_blank" rel="noopener">東京都〇〇区〇〇 2-3-4</a></td>
+          <td class="link-cell"><a href="../1利用者1ページ.html" class="btn-detail">詳細を開く</a></td>
+        </tr>
+        <tr data-yomigana="すずき いちろう">
+          <td>鈴木 一郎</td>
+          <td>すずき いちろう</td>
+          <td>男性</td>
+          <td>090-1234-5678</td>
+          <td><a href="https://www.google.com/maps?q=東京都〇〇区〇〇" class="addr-link" target="_blank" rel="noopener">東京都〇〇区〇〇 3-4-5</a></td>
+          <td class="link-cell"><a href="../1利用者1ページ.html" class="btn-detail">詳細を開く</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">施設情報</h2>
+  <div class="table-wrap">
+    <table id="table-facilities">
+      <thead>
+        <tr>
+          <th>施設名</th>
+          <th>読み仮名</th>
+          <th>住所</th>
+          <th>連絡先</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-yomigana="〇〇 ほうかご デイ サービス">
+          <td>〇〇 放課後デイサービス</td>
+          <td>〇〇 ほうかご デイ サービス</td>
+          <td><a href="https://www.google.com/maps?q=東京都〇〇区" class="addr-link" target="_blank" rel="noopener">東京都〇〇区〇〇 4-5-6</a></td>
+          <td>03-3456-7890</td>
+        </tr>
+        <tr data-yomigana="△△ つうしょ">
+          <td>△△ 通所</td>
+          <td>△△ つうしょ</td>
+          <td><a href="https://www.google.com/maps?q=東京都〇〇区" class="addr-link" target="_blank" rel="noopener">東京都〇〇区〇〇 5-6-7</a></td>
+          <td>03-4567-8901</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    (function() {
+      var searchInput = document.getElementById('search');
+      var userRows = document.querySelectorAll('#table-users tbody tr');
+      var facilityRows = document.querySelectorAll('#table-facilities tbody tr');
+      function normalizeForSearch(str) { return (!str ? '' : (str + '').toLowerCase().replace(/\s+/g, ' ')); }
+      function filterRows() {
+        var q = normalizeForSearch(searchInput.value).trim();
+        if (q === '') { userRows.forEach(function(r) { r.classList.remove('no-match'); }); facilityRows.forEach(function(r) { r.classList.remove('no-match'); }); return; }
+        userRows.forEach(function(r) { r.classList.toggle('no-match', normalizeForSearch(r.getAttribute('data-yomigana') || '').indexOf(q) === -1); });
+        facilityRows.forEach(function(r) { r.classList.toggle('no-match', normalizeForSearch(r.getAttribute('data-yomigana') || '').indexOf(q) === -1); });
+      }
+      searchInput.addEventListener('input', filterRows);
+    })();
+  </script>
+</body>
+</html>

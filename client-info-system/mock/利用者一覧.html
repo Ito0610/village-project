@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>情報一覧（モック）</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif; margin: 0; padding: 24px; background: #f7f6f3; }
+    h1 { font-size: 1.5rem; margin-bottom: 16px; color: #37352f; }
+    .search-wrap { margin-bottom: 24px; }
+    .search-wrap label { display: block; font-size: 0.9rem; color: #37352f; margin-bottom: 6px; }
+    .search-wrap input { width: 100%; max-width: 320px; padding: 10px 14px; font-size: 1rem; border: 1px solid #e9e9e7; border-radius: 6px; }
+    .search-wrap input:focus { outline: none; border-color: #2383e2; }
+    .section-title { font-size: 1.1rem; font-weight: 600; margin: 32px 0 12px; color: #37352f; }
+    .section-title:first-of-type { margin-top: 0; }
+    .note { font-size: 0.85rem; color: #787774; margin-bottom: 20px; padding: 12px; background: #fff; border-radius: 6px; }
+    .table-wrap { overflow-x: auto; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; min-width: 640px; }
+    th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e9e9e7; }
+    th { background: #f7f6f3; font-weight: 600; color: #37352f; font-size: 0.85rem; }
+    td { font-size: 0.9rem; color: #37352f; }
+    tr:hover { background: #f7f6f3; }
+    tr.no-match { display: none; }
+    .link-cell { white-space: nowrap; }
+    .link-cell .no-detail { color: #9b9a97; font-size: 0.9rem; }
+    a.btn-detail { display: inline-block; padding: 6px 14px; background: #2383e2; color: #fff; text-decoration: none; border-radius: 6px; font-size: 0.85rem; }
+    a.btn-detail:hover { background: #0d6bc7; }
+    a.addr-link { color: #2383e2; text-decoration: none; }
+    a.addr-link:hover { text-decoration: underline; }
+    .search-hint { font-size: 0.8rem; color: #787774; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <h1>情報一覧</h1>
+  <p class="note">【モック】利用者情報と施設情報を一覧で表示します。ひらがなで検索できます。詳細ページが未作成の行は「詳細を開く」ボタンは表示せず「−」にします。作成済みの行のみボタンからNotionページなどへ遷移します。</p>
+
+  <div class="search-wrap">
+    <label for="search">検索（ひらがなで利用者・施設を検索）</label>
+    <input type="text" id="search" placeholder="例：やまだ、さとう、〇〇デイ" autocomplete="off">
+    <p class="search-hint">よみがな・読み仮名の一部で絞り込みます</p>
+  </div>
+
+  <h2 class="section-title">利用者情報</h2>
+  <div class="table-wrap">
+    <table id="table-users">
+      <thead>
+        <tr>
+          <th>氏名</th>
+          <th>よみがな</th>
+          <th>連絡先（電話番号）</th>
+          <th>住所（自宅）</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-yomigana="やまだ たろう" data-detail-url="1利用者1ページ.html">
+          <td>山田 太郎</td>
+          <td>やまだ たろう</td>
+          <td>03-1234-5678</td>
+          <td><a href="https://www.google.com/maps?q=東京都〇〇区〇〇" class="addr-link" target="_blank" rel="noopener">東京都〇〇区〇〇 1-2-3</a></td>
+          <td class="link-cell"><a href="1利用者1ページ.html" class="btn-detail">詳細を開く</a></td>
+        </tr>
+        <tr data-yomigana="さとう はなこ" data-detail-url="">
+          <td>佐藤 花子</td>
+          <td>さとう はなこ</td>
+          <td>03-2345-6789</td>
+          <td><a href="https://www.google.com/maps?q=東京都〇〇区〇〇" class="addr-link" target="_blank" rel="noopener">東京都〇〇区〇〇 2-3-4</a></td>
+          <td class="link-cell"><span class="no-detail">−</span></td>
+        </tr>
+        <tr data-yomigana="すずき いちろう" data-detail-url="1利用者1ページ.html">
+          <td>鈴木 一郎</td>
+          <td>すずき いちろう</td>
+          <td>090-1234-5678</td>
+          <td><a href="https://www.google.com/maps?q=東京都〇〇区〇〇" class="addr-link" target="_blank" rel="noopener">東京都〇〇区〇〇 3-4-5</a></td>
+          <td class="link-cell"><a href="1利用者1ページ.html" class="btn-detail">詳細を開く</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">施設情報</h2>
+  <div class="table-wrap">
+    <table id="table-facilities">
+      <thead>
+        <tr>
+          <th>施設名</th>
+          <th>読み仮名</th>
+          <th>住所</th>
+          <th>連絡先</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-yomigana="〇〇 ほうかご デイ サービス" data-detail-url="#">
+          <td>〇〇 放課後デイサービス</td>
+          <td>〇〇 ほうかご デイ サービス</td>
+          <td><a href="https://www.google.com/maps?q=東京都〇〇区" class="addr-link" target="_blank" rel="noopener">東京都〇〇区〇〇 4-5-6</a></td>
+          <td>03-3456-7890</td>
+          <td class="link-cell"><a href="#" class="btn-detail">詳細を開く</a></td>
+        </tr>
+        <tr data-yomigana="△△ つうしょ" data-detail-url="">
+          <td>△△ 通所</td>
+          <td>△△ つうしょ</td>
+          <td><a href="https://www.google.com/maps?q=東京都〇〇区" class="addr-link" target="_blank" rel="noopener">東京都〇〇区〇〇 5-6-7</a></td>
+          <td>03-4567-8901</td>
+          <td class="link-cell"><span class="no-detail">−</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    (function() {
+      var searchInput = document.getElementById('search');
+      var userRows = document.querySelectorAll('#table-users tbody tr');
+      var facilityRows = document.querySelectorAll('#table-facilities tbody tr');
+
+      function normalizeForSearch(str) {
+        if (!str) return '';
+        return (str + '').toLowerCase().replace(/\s+/g, ' ');
+      }
+
+      function filterRows() {
+        var q = normalizeForSearch(searchInput.value).trim();
+        if (q === '') {
+          userRows.forEach(function(r) { r.classList.remove('no-match'); });
+          facilityRows.forEach(function(r) { r.classList.remove('no-match'); });
+          return;
+        }
+        userRows.forEach(function(r) {
+          var yomi = normalizeForSearch(r.getAttribute('data-yomigana') || '');
+          r.classList.toggle('no-match', yomi.indexOf(q) === -1);
+        });
+        facilityRows.forEach(function(r) {
+          var yomi = normalizeForSearch(r.getAttribute('data-yomigana') || '');
+          r.classList.toggle('no-match', yomi.indexOf(q) === -1);
+        });
+      }
+
+      searchInput.addEventListener('input', filterRows);
+      searchInput.addEventListener('keyup', filterRows);
+    })();
+  </script>
+</body>
+</html>

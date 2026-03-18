@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>山田 太郎 - 利用者情報（1ページモック）</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif; margin: 0; padding: 0; background: #fff; color: #37352f; line-height: 1.6; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { margin-bottom: 24px; font-size: 0.9rem; }
+    .back a { color: #2383e2; text-decoration: none; }
+    .back a:hover { text-decoration: underline; }
+    h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; }
+    .sub { font-size: 0.9rem; color: #787774; margin-bottom: 32px; }
+    h2 { font-size: 1.15rem; margin: 32px 0 12px; padding-bottom: 4px; border-bottom: 1px solid #e9e9e7; }
+    h3 { font-size: 1rem; margin: 20px 0 8px; color: #37352f; }
+    .block { margin-bottom: 16px; padding: 12px 0; }
+    .block p { margin: 0 0 8px; }
+    .placeholder { color: #9b9a97; font-style: italic; }
+    ul { margin: 0; padding-left: 1.4em; }
+    .danger { background: #fff3f3; padding: 12px; border-radius: 6px; margin: 8px 0; border-left: 3px solid #eb5757; }
+    .note { font-size: 0.85rem; color: #787774; margin-top: 24px; padding: 12px; background: #f7f6f3; border-radius: 6px; }
+    /* 支援の流れ：時系列 ①→②→③ */
+    .flow-section { margin: 24px 0; }
+    .flow-pattern-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 16px; color: #37352f; }
+    .flow-step { padding: 14px 18px; background: #f7f6f3; border-radius: 8px; margin-bottom: 4px; border-left: 4px solid #2383e2; }
+    .flow-step-num { font-weight: 700; color: #2383e2; margin-right: 8px; }
+    .flow-arrow { text-align: center; padding: 4px 0; color: #9b9a97; font-size: 1.1rem; }
+    .flow-step .placeholder { color: #9b9a97; font-style: italic; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p class="back"><a href="利用者一覧.html">← 利用者一覧にもどる</a></p>
+    <h1>山田 太郎</h1>
+    <p class="sub">【モック】この1ページに、この利用者さんの情報をすべて載せます。子ページや別画面への遷移はしません。</p>
+
+    <!-- 基本情報 -->
+    <h2>基本情報</h2>
+    <div class="block">
+      <p>顔写真・写真（枚数制限なしで掲載可）</p>
+      <p>性別：男性　よみがな：やまだ たろう</p>
+    </div>
+
+    <!-- 住所 -->
+    <h2>住所</h2>
+    <h3>自宅</h3>
+    <div class="block">
+      <p class="placeholder">（住所）</p>
+      <p><a href="#">Googleマップのリンク</a></p>
+    </div>
+    <h3>放課後等デイサービス</h3>
+    <div class="block"><p class="placeholder">あれば記入</p></div>
+    <h3>通所</h3>
+    <div class="block"><p class="placeholder">あれば記入</p></div>
+    <h3>学校</h3>
+    <div class="block"><p class="placeholder">あれば記入</p></div>
+    <h3>その他よく行く場所</h3>
+    <div class="block"><p class="placeholder">あれば記入</p></div>
+
+    <!-- 移動・意思疎通 -->
+    <h2>移動・意思疎通</h2>
+    <div class="block">
+      <p>移動：歩行自立（補足があればここに）</p>
+      <p>意思疎通：<span class="placeholder">どのような形でできるか、または意思疎通不可など</span></p>
+    </div>
+
+    <!-- 危険・NG -->
+    <h2>危険・NG行為（重要）</h2>
+    <div class="block danger">
+      <p><strong>危険な行為・命に関わる行為</strong></p>
+      <p class="placeholder">（記述）</p>
+      <p><strong>ヘルパーがやってはいけないこと（NG行為）</strong></p>
+      <p class="placeholder">（記述）</p>
+    </div>
+
+    <!-- 食事 -->
+    <h2>食事</h2>
+    <div class="block">
+      <p>自立 / 介助 ＋ 注意事項：<span class="placeholder">（記述）</span></p>
+    </div>
+
+    <!-- 排泄 -->
+    <h2>排泄</h2>
+    <div class="block">
+      <p>自立 / 介助 ＋ 注意事項：<span class="placeholder">（記述）</span></p>
+      <p>リハビリパンツ：着用あり / なし</p>
+    </div>
+
+    <!-- その他 -->
+    <h2>その他（障害・病気・服薬）</h2>
+    <div class="block">
+      <p>障害・病気の情報：<span class="placeholder">（記述）</span></p>
+      <p>服薬情報：<span class="placeholder">（記述）</span></p>
+    </div>
+
+    <!-- 支援について -->
+    <h2>支援についての情報</h2>
+    <div class="block">
+      <p><strong>主な支援の注意点・ポイント</strong></p>
+      <p class="placeholder">（記述）</p>
+      <p>金銭管理：ヘルパー管理 / 本人管理</p>
+      <p>交通費の支払い：利用者側・ヘルパー側（現金/IC/その他）</p>
+      <p><strong>ご家族からの要望（あれば）</strong></p>
+      <p class="placeholder">（記述）</p>
+      <p><strong>好きなこと・喜ぶこと（あれば）</strong></p>
+      <p class="placeholder">（記述）</p>
+    </div>
+
+    <!-- 支援の流れ：時系列で ①→②→③ の形で丁寧に -->
+    <h2>支援の流れ</h2>
+    <p class="sub">時系列に沿って、ステップごとに書きます。各ステップにやること・注意点・時間・場所などを自由に書けます。写真もステップの前後に挿入できます。</p>
+
+    <div class="flow-section">
+      <h3 class="flow-pattern-title">パターン1：自宅→放デイ→自宅</h3>
+      <div class="flow-step"><span class="flow-step-num">①</span><span class="placeholder">例：〇時〇分 自宅到着・挨拶。玄関の鍵は〇〇。スタート場所の住所・マップリンクがあればここに。</span></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step"><span class="flow-step-num">②</span><span class="placeholder">例：一緒に最寄り駅まで徒歩。段差では声かけと介助。電車は〇〇線。交通費は利用者IC・ヘルパー現金。</span></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step"><span class="flow-step-num">③</span><span class="placeholder">例：〇〇駅で降りて放デイまで徒歩。〇階エレベーター利用。到着したらスタッフに挨拶・引き継ぎ。</span></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step"><span class="flow-step-num">④</span><span class="placeholder">例：帰りは〇時頃 放デイ迎え。同じ経路で自宅へ。ゴールは自宅。排泄は〇〇で対応。問題時の連絡先は〇〇。</span></div>
+      <p class="note" style="margin-top:12px;">写真・金銭の注意点・排泄の注意点・問題発生時の対処は、<strong>基本的に該当するステップの中に書いてください。</strong></p>
+    </div>
+
+    <div class="flow-section">
+      <h3 class="flow-pattern-title">パターン2：学校送迎</h3>
+      <div class="flow-step"><span class="flow-step-num">①</span><span class="placeholder">スタート：自宅（住所・マップリンク）</span></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step"><span class="flow-step-num">②</span><span class="placeholder">（やること・注意点・時間）</span></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step"><span class="flow-step-num">③</span><span class="placeholder">学校到着／お迎え など。ゴールの場所もここで。</span></div>
+    </div>
+
+    <p class="note">【モック】実際のNotionでは、①〜④の各ブロックの中に必要なだけ詳しく書けます。ステップは増やしても減らしてもOKです。</p>
+  </div>
+</body>
+</html>
